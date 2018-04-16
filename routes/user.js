@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/register', (req, res, next) => {
   const { displayName, email, password } = req.body;
   const lengthValidation = {
     displayName: {
@@ -53,6 +53,9 @@ router.post('/', (req, res, next) => {
     const err = errorGenerator(`${nonStringField} must be a string`);
     return next(err);
   }
+
+  //I was working on setting up authentication in the front end. I had some issues with data not being posted to the endpoint and I was working on fixing that. It was mostly because the
+  //boilerplate uses redux form and I was not doing so.
 
   const whiteSpace = requiredFields.find(
     field =>
