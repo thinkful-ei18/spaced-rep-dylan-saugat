@@ -7,3 +7,6 @@ deploy:
   app: sd-spaced-rep-server
   on:
     repo: thinkful-ei18/spaced-rep-dylan-saugat-server
+cache:
+  directories:
+    - 'node_modules'
