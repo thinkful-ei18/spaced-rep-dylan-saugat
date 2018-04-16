@@ -10,8 +10,7 @@ router.use(
 );
 
 router.get('/', (req, res, next) => {
-  console.log(req.user);
-  Question.find()
+  Question.find({ userId: req.user.id})
     .then(response => {
       res.json(response);
     })
@@ -19,6 +18,5 @@ router.get('/', (req, res, next) => {
       next(err);
     });
 });
-
 
 module.exports = router;
