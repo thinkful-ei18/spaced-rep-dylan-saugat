@@ -19,4 +19,18 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.post('/', (req, res, next) => {
+  Question.findById(req.body.id)
+    .then(response => {
+      if(response.answer === req.body.answer) {
+        res.json('Correct');
+      } else {
+        res.json('Incorrect');
+      }
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 module.exports = router;
