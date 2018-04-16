@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const { Question } = require('../models/question');
 const passport = require('passport');
+const updatePosition = require('../helpers/mValue');
 
 router.use(
   passport.authenticate('jwt', { session: false, failWithError: true })
@@ -23,10 +24,10 @@ router.post('/', (req, res, next) => {
   Question.findById(req.body.id)
     .then(response => {
       if(response.answer === req.body.answer) {
-        // updatePositionRightAnswer(response, response.mValue + 1);
+        // updatePosition(response, response.mValue + 1);
         res.json({feedback: 'Correct', attempts: response.attempts + 1, correctAttempts: response.correctAttempts + 1});
       } else {
-        // updatePositionWrongAnswer(response)
+        // updatePosition(response, 1)
         res.json({
           feedback: 'Incorrect',
           attempts: response.attempts + 1

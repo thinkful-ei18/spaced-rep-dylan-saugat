@@ -8,8 +8,7 @@ const questionSchema = mongoose.Schema({
   attempts: { type: Number, default: 0 },
   correctAttempts: { type: Number, default: 0 },
   userId: { type: mongoose.Schema.Types.ObjectId, required: true },
-  mValue: { type: Number, default: 1},
-  next: { type: mongoose.Schema.Types.ObjectId }
+  mValue: { type: Number, default: 1}
 });
 
 questionSchema.set('toObject', {
