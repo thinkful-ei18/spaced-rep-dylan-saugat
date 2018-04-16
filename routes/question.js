@@ -10,7 +10,7 @@ router.use(
 );
 
 router.get('/', (req, res, next) => {
-  Question.find({ userId: req.user.id})
+  Question.find({ userId: req.user.id })
     .then(response => {
       res.json(response);
     })
