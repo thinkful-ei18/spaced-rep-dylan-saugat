@@ -23,11 +23,14 @@ router.post('/', (req, res, next) => {
   Question.findById(req.body.id)
     .then(response => {
       if(response.answer === req.body.answer) {
+        // updatePosition(response, response.mValue + 1);
         res.json('Correct');
       } else {
+        // updatePosition(response, 1)
         res.json('Incorrect');
       }
     })
+
     .catch(err => {
       next(err);
     });

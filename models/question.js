@@ -7,7 +7,9 @@ const questionSchema = mongoose.Schema({
   answer: { type: String, required: true },
   attempts: { type: Number, default: 0 },
   correctAttempts: { type: Number, default: 0 },
-  userId: { type: mongoose.Schema.Types.ObjectId, required: true }
+  userId: { type: mongoose.Schema.Types.ObjectId, required: true },
+  mValue: { type: Number, default: 1},
+  next: { type: mongoose.Schema.Types.ObjectId }
 });
 
 questionSchema.set('toObject', {
