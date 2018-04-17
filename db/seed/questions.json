@@ -1,7 +1,7 @@
 [
   {
     "question": "Servant",
-    "dragonAnswer": "Aar",
+    "dragonAnswer": "2r",
     "answer": "Aar"
   },
   {
@@ -11,7 +11,7 @@
   },
   {
     "question": "Undead",
-    "dragonAnswer": "Diil",
+    "dragonAnswer": "D6l",
     "answer": "Diil"
   },
   {
@@ -26,27 +26,27 @@
   },
   {
     "question": "Carve",
-    "dragonAnswer": "Dwiirok",
+    "dragonAnswer": "Dw6rok",
     "answer": "Dwiirok"
   },
   {
     "question": "Extinguish",
-    "dragonAnswer": "Evenaar",
+    "dragonAnswer": "Even2r",
     "answer": "Evenaar"
   },
   {
     "question": "Haunt",
-    "dragonAnswer": "Folook",
+    "dragonAnswer": "Fol9k",
     "answer": "Folook"
   },
   {
     "question": "Stamina",
-    "dragonAnswer": "Gaan",
+    "dragonAnswer": "G2n",
     "answer": "Gaan"
   },
   {
     "question": "Wolf",
-    "dragonAnswer": "Grohiik",
+    "dragonAnswer": "Groh6k",
     "answer": "Grohiik"
   }
 ]
