@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../models/user');
 const LinkedList = require('../helpers/linked-list');
-const createQuestionPromises = require('../helpers/question-promises');
 const { buildList } = require('../helpers/mValue');
 
 router.get('/', (req, res, next) => {
@@ -83,11 +82,11 @@ router.post('/register', (req, res, next) => {
     const err = errorGenerator(
       tooShort
         ? `${tooShort} must be ${
-            lengthValidation[tooShort].min
-          } characters or longer`
+          lengthValidation[tooShort].min
+        } characters or longer`
         : `${tooLong} must be ${
-            lengthValidation[tooLong].max
-          } characters or smaller`
+          lengthValidation[tooLong].max
+        } characters or smaller`
     );
     return next(err);
   }
