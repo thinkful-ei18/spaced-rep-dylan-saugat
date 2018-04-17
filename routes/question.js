@@ -15,7 +15,6 @@ router.get('/', (req, res, next) => {
     .then(response => {
       let result = response.questions.head.value;
       delete result.answer;
-      delete result.mValue;
       res.json(result);
     })
     .catch(err => {
@@ -34,6 +33,7 @@ router.post('/', (req, res, next) => {
       let questions = response.questions;
       result.attempts = questions.head.value.attempts;
       result.correctAttempts = questions.head.value.correctAttempts;
+      result.answer = questions.head.value.answer;
       if (response.questions.head.value.answer === req.body.answer) {
         questions = updatePosition(questions, questions.head.value.mValue + 1);
         result.attempts += 1;
