@@ -40,13 +40,12 @@ router.post('/', (req, res, next) => {
         result.correctAttempts += 1;
       } else {
         questions = updatePosition(questions, 1);
-        console.log(JSON.stringify(questions, null, 2));
         result.feedback = 'Incorrect';
         result.attempts += 1;
       }
       return User.findByIdAndUpdate(req.user.id, { $set: { questions } } );
     })
-    .then(response => {
+    .then(() => {
       res.json(result);
     })
     .catch(err => {
