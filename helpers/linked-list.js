@@ -57,14 +57,14 @@ class LinkedList {
   insertBefore(value, key) {
     let tempNode = this.head;
     while (tempNode.next !== null) {
-      if (tempNode.next.value === key) {
+      if (tempNode.next.value.mValue === key) {
         let afterNode = tempNode.next;
         tempNode.next = new _Node(value, afterNode);
         return;
       }
       tempNode = tempNode.next;
     }
-    return false;
+    this.insertLast(value);
   }
 
   insertAfter(value, key) {

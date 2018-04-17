@@ -2,18 +2,21 @@
 
 const express = require('express');
 const router = express.Router();
-const { Question } = require('../models/question');
+const { User } = require('../models/user');
 const passport = require('passport');
-const updatePosition = require('../helpers/mValue');
+const { updatePosition } = require('../helpers/mValue');
 
 router.use(
   passport.authenticate('jwt', { session: false, failWithError: true })
 );
 
 router.get('/', (req, res, next) => {
-  Question.find({ userId: req.user.id })
+  User.findById(req.user.id)
     .then(response => {
-      res.json(response);
+      let result = response.questions.head.value;
+      delete result.answer;
+      delete result.mValue;
+      res.json(result);
     })
     .catch(err => {
       next(err);
@@ -21,20 +24,31 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  Question.findById(req.body.id)
+  let result = {
+    feedback: 'Correct',
+    attempts: 0,
+    correctAttempts: 0
+  };
+  User.findById(req.user.id)
     .then(response => {
-      if(response.answer === req.body.answer) {
-        // updatePosition(response, response.mValue + 1);
-        res.json({feedback: 'Correct', attempts: response.attempts + 1, correctAttempts: response.correctAttempts + 1});
+      let questions = response.questions;
+      result.attempts = questions.head.value.attempts;
+      result.correctAttempts = questions.head.value.correctAttempts;
+      if (response.questions.head.value.answer === req.body.answer) {
+        questions = updatePosition(questions, questions.head.value.mValue + 1);
+        result.attempts += 1;
+        result.correctAttempts += 1;
       } else {
-        // updatePosition(response, 1)
-        res.json({
-          feedback: 'Incorrect',
-          attempts: response.attempts + 1
-        });
+        questions = updatePosition(questions, 1);
+        console.log(JSON.stringify(questions, null, 2));
+        result.feedback = 'Incorrect';
+        result.attempts += 1;
       }
+      return User.findByIdAndUpdate(req.user.id, { $set: { questions } } );
     })
-
+    .then(response => {
+      res.json(result);
+    })
     .catch(err => {
       next(err);
     });

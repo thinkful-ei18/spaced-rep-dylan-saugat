@@ -1,8 +1,10 @@
 'use strict';
-
 const express = require('express');
 const router = express.Router();
 const { User } = require('../models/user');
+const LinkedList = require('../helpers/linked-list');
+const createQuestionPromises = require('../helpers/question-promises');
+const { buildList } = require('../helpers/mValue');
 
 router.get('/', (req, res, next) => {
   User.find()
@@ -89,9 +91,12 @@ router.post('/register', (req, res, next) => {
     );
     return next(err);
   }
+
+  let questions = new LinkedList();
+  buildList(questions);
   return User.hashPassword(password)
     .then(digest => {
-      const newUser = { displayName, email, password: digest };
+      const newUser = { displayName, email, password: digest, questions };
       return User.create(newUser);
     })
     .then(response => {
