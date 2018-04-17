@@ -25,8 +25,9 @@ function buildList(list) {
 
 function insertBefore(list, value, key) {
   let tempNode = list.head;
+  let counter = 0;
   while (tempNode.next !== null) {
-    if (tempNode.value.mValue === key && tempNode.next.value.mValue >= key + 1) {
+    if (counter === key) {
       let afterNode = tempNode.next;
       tempNode.next = {
         value,
@@ -35,6 +36,7 @@ function insertBefore(list, value, key) {
       return;
     }
     tempNode = tempNode.next;
+    counter++;
   }
   tempNode.next = {
     value,
