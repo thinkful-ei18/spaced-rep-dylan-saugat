@@ -1,6 +1,6 @@
 {
-  "name": "Spaced Rep Back End",
-  "version": "0.1",
+  "name": "spaced-rep-backend",
+  "version": "0.1.0",
   "description": "Express back end for spaced repetition project",
   "main": "index.js",
   "scripts": {
