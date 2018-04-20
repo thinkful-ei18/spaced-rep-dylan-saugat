@@ -5,15 +5,6 @@ const { User } = require('../models/user');
 const LinkedList = require('../helpers/linked-list');
 const { buildList } = require('../helpers/mValue');
 
-router.get('/', (req, res, next) => {
-  User.find()
-    .then(response => {
-      res.json(response);
-    })
-    .catch(err => {
-      next(err);
-    });
-});
 
 router.post('/register', (req, res, next) => {
   const { displayName, email, password } = req.body;
@@ -93,6 +84,7 @@ router.post('/register', (req, res, next) => {
 
   let questions = new LinkedList();
   buildList(questions);
+  
   return User.hashPassword(password)
     .then(digest => {
       const newUser = { displayName, email, password: digest, questions };

@@ -7,7 +7,7 @@ const localStrategy = new LocalStrategy(
   (username, password, done) => {
     let user;
     User.findOne({ email: username })
-      .then(results => {
+      .then(results => { 
         user = results;
         if (!user) {
           return done(null, false);

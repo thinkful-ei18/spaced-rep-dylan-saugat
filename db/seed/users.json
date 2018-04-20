@@ -1,0 +1,108 @@
+{
+  "displayName": "dylan",
+  "email": "nielsen.dylan@gmail.com",
+  "password": "$2a$10$M5C6eAiuVbPQ7kNJN3VOtuaMO47gIH/p86dL7Aa0zCYfHrIVXsKk6",
+  "questions": {
+        "head": {
+            "value": {
+                "question": "Lord",
+                "dragonAnswer": "Drog",
+                "answer": "Drog",
+                "attempts": 11,
+                "correctAttempts": 5,
+                "mValue": 1
+            },
+            "next": {
+                "value": {
+                    "question": "Carve",
+                    "dragonAnswer": "Dw6rok",
+                    "answer": "Dwiirok",
+                    "attempts": 5,
+                    "correctAttempts": 3,
+                    "mValue": 3
+                },
+                "next": {
+                    "value": {
+                        "question": "Beautiful",
+                        "dragonAnswer": "Brit",
+                        "answer": "Brit",
+                        "attempts": 10,
+                        "correctAttempts": 5,
+                        "mValue": 2
+                    },
+                    "next": {
+                        "value": {
+                            "question": "Servant",
+                            "dragonAnswer": "2r",
+                            "answer": "Aar",
+                            "attempts": 9,
+                            "correctAttempts": 7,
+                            "mValue": 3
+                        },
+                        "next": {
+                            "value": {
+                                "question": "Hound",
+                                "dragonAnswer": "Dok",
+                                "answer": "Dok",
+                                "attempts": 7,
+                                "correctAttempts": 5,
+                                "mValue": 4
+                            },
+                            "next": {
+                                "value": {
+                                    "question": "Undead",
+                                    "dragonAnswer": "D6l",
+                                    "answer": "Diil",
+                                    "attempts": 8,
+                                    "correctAttempts": 4,
+                                    "mValue": 5
+                                },
+                                "next": {
+                                    "value": {
+                                        "question": "Extinguish",
+                                        "dragonAnswer": "Even2r",
+                                        "answer": "Evenaar",
+                                        "attempts": 0,
+                                        "correctAttempts": 0,
+                                        "mValue": 1
+                                    },
+                                    "next": {
+                                        "value": {
+                                            "question": "Haunt",
+                                            "dragonAnswer": "Fol9k",
+                                            "answer": "Folook",
+                                            "attempts": 0,
+                                            "correctAttempts": 0,
+                                            "mValue": 1
+                                        },
+                                        "next": {
+                                            "value": {
+                                                "question": "Stamina",
+                                                "dragonAnswer": "G2n",
+                                                "answer": "Gaan",
+                                                "attempts": 0,
+                                                "correctAttempts": 0,
+                                                "mValue": 1
+                                            },
+                                            "next": {
+                                                "value": {
+                                                    "question": "Wolf",
+                                                    "dragonAnswer": "Groh6k",
+                                                    "answer": "Grohiik",
+                                                    "attempts": 0,
+                                                    "correctAttempts": 0,
+                                                    "mValue": 1
+                                                },
+                                                "next": null
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
