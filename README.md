@@ -1,6 +1,6 @@
 # Spaced Repetition
 
-A flash card application with a spaced repetition algorithm to more effectively learn Dragon Language from Skyrim.
+A flash card application with a spaced repetition algorithm to more effectively learn Dragon Language from Skyrim. The site is deployed [here](http://mystifying-goldwasser-1d6115.netlify.com/)
 
 ## Getting started
 
